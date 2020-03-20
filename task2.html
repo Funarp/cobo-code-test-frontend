@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #cells {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .cell {
+      width: 20px;
+      height: 20px;
+      border: 1px solid transparent;
+    }
+
+    .top {
+      border-top-color: #000;
+    }
+
+    .bottom {
+      border-bottom-color: #000;
+    }
+
+    .left {
+      border-left-color: #000;
+    }
+
+    .right {
+      border-right-color: #000;
+    }
+
+    .rat {
+      background: orange !important;
+    }
+
+    .rat_back {
+      background: blue !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cells">
+    <div class="row">
+      <div class="top cell rat"></div>
+      <div class="top bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top cell"></div>
+      <div class="top cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="left cell"></div>
+      <div class="top right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="right cell"></div>
+      <div class="top left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+    </div>
+    <div class="row">
+      <div class="bottom left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top cell"></div>
+      <div class="top right cell"></div>
+    </div>
+    <div class="row">
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left right cell"></div>
+      <div class="top bottom left cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top bottom left cell"></div>
+      <div class="top cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="right cell"></div>
+    </div>
+    <div class="row">
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="top bottom left cell"></div>
+      <div class="top right cell"></div>
+      <div class="left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top right cell"></div>
+      <div class="left cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top right cell"></div>
+      <div class="top left cell"></div>
+      <div class="right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top bottom left cell"></div>
+      <div class="top right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="bottom left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top right cell"></div>
+    </div>
+    <div class="row">
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left right cell"></div>
+      <div class="left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left right cell"></div>
+      <div class="top bottom left cell"></div>
+      <div class="right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="right cell"></div>
+      <div class="bottom left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+    </div>
+    <div class="row">
+      <div class="left cell"></div>
+      <div class="top right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="left right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left right cell"></div>
+      <div class="left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="top left right cell"></div>
+    </div>
+    <div class="row">
+      <div class="bottom left right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom right cell"></div>
+      <div class="bottom left cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="top bottom cell"></div>
+      <div class="bottom cell"></div>
+    </div>
+  </div>
+  <script>
+    const value = { top: false, left: false, bottom: false, right: false };
+    const panel = [];
+    const rows = document.getElementsByClassName('row');
+
+    for (let row of rows) {
+      const nodes = row.children;
+      let eachRow = [];
+      for (let node of nodes) {
+        const borders = node.classList.value.split(' ').filter(className => ['top', 'left', 'right', 'bottom'].indexOf(className) != -1)
+        const borderMap = {}
+        borders.forEach(line => borderMap[line] = true)
+        eachRow.push(Object.assign({}, value, borderMap))
+      }
+      panel.push(eachRow)
+    }
+    console.log(JSON.stringify(panel))
+
+    /* new code start here */
+    const DISABLE_DIR_ZERO = "left";
+    const DEBUG = true;
+    
+    function opposite(dir) {
+      switch (dir) {
+        case "top": return "bottom";
+        case "bottom": return "top";
+        case "left": return "right";
+        case "right": return "left";
+        default:
+          break;
+      }
+    }
+
+    function directions_count(point){
+      let dis_count = 0;
+      for (var key in point) {
+        if (!point[key]) { dis_count++ }
+      }
+      return dis_count;
+    }
+
+    function rander_path(path) {
+      path.forEach(value => {
+        rows[value[0]].children[value[1]].classList.add('rat')
+      })
+    }
+
+    function solve_maze() {
+      let end_x = panel.length - 1;
+      let end_y = panel[end_x].length - 1;
+      let current_x = current_y = 0;
+      // solve path
+      let path = [[current_x, current_y]]
+
+      let panel_copy = JSON.parse(JSON.stringify(panel));
+      panel_copy[0][0][DISABLE_DIR_ZERO] = true;
+
+      while (true) {
+        if (current_x == end_x && current_y == end_y) {
+          if(DEBUG){
+            console.log(path)
+          }
+          rander_path(path);
+          return
+        }
+        let current_point = panel_copy[current_x][current_y];
+        // count avaliable directions
+        if (directions_count(current_point) > 0) {
+          for (const dir in current_point) {
+            if (!current_point[dir]) {
+              current_point[dir] = true;
+              // move
+              switch (dir) {
+                case "top":current_x--; break;
+                case "bottom":current_x++; break;
+                case "left":current_y--; break;
+                case "right":current_y++; break;
+                default: break;
+              }
+              path.push([current_x, current_y]);
+              panel_copy[current_x][current_y][opposite(dir)] = true;
+              break;
+            }
+          }
+        } else {
+          if (current_x == 0 && current_y == 0) {
+            alert("cannot solve the maze!")
+            return;
+          }
+          // back
+          path.pop()
+          current_x = path[path.length - 1][0]
+          current_y = path[path.length - 1][1]
+        }
+      }
+    }
+    solve_maze()
+    /* new code end here */
+
+
+  </script>
+</body>
+
+</html>
