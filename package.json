@@ -1,0 +1,23 @@
+{
+  "name": "cobo-code-test-frontend",
+  "version": "1.0.0",
+  "description": "This is the frontend code test repo for Cobo Code Interview. Have Fun and Good Luck!",
+  "main": "./index.js",
+  "scripts": {
+    "dev": "parcel task1.html task2.html",
+    "build": "parcel build task1.html task2.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Funarp/cobo-code-test-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Funarp/cobo-code-test-frontend/issues"
+  },
+  "homepage": "https://github.com/Funarp/cobo-code-test-frontend#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
