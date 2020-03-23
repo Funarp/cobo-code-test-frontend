@@ -5,6 +5,10 @@ const app = rander_cells(20, 20)
 document.body.appendChild(app);
 
 const rows = document.getElementsByClassName('row');
+const p = document.createElement('p')
+p.innerText = "Press 's' to move one step \nPress Enter to auto solve\nPress 'c' to stop auto solve"
+app.appendChild(p)
+
 const panel = maze_panel();
 const path = solve_maze(panel);
 
