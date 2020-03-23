@@ -17,15 +17,21 @@ function solve_one_step() {
         path_count++;
     }else{
         if(timer_num != 0){
-            window.clearInterval(timer_num)
+            window.clearInterval(timer_num);
         }
     }
 }
 
 function solve_all() {
     if(path_count < path.length){
-        document.onkeydown = undefined
-        timer_num = setInterval(solve_one_step,300)
+        timer_num = setInterval(solve_one_step,300);
+    }
+}
+
+function stop_solve() {
+    if(timer_num != 0){
+        window.clearInterval(timer_num);
+        timer_num = 0;
     }
 }
 
@@ -39,9 +45,11 @@ document.onkeydown = function (e) {
     }
     switch (key) {
         case 83: // press 's' for one step
-            solve_one_step();break;
-        case 13:
-            solve_all();break;
+            if(timer_num == 0){solve_one_step()};break;
+        case 13: // press Enter for auto solve
+            if(timer_num == 0){solve_all()};break;
+        case 67: // press 'c' to cancel auto solve
+            stop_solve();break;
         default:
             break;
     }
