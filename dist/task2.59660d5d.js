@@ -470,6 +470,9 @@ var _solve = require("./solve");
 var app = (0, _maze.rander_cells)(20, 20);
 document.body.appendChild(app);
 var rows = document.getElementsByClassName('row');
+var p = document.createElement('p');
+p.innerText = "Press 's' to move one step \nPress Enter to auto solve\nPress 'c' to stop auto solve";
+app.appendChild(p);
 var panel = (0, _panel.maze_panel)();
 var path = (0, _solve.solve_maze)(panel);
 var path_count = 0;
@@ -566,7 +569,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42783" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38673" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
